@@ -1,29 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CEREBROFF ($CBROFF)</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ===== GLITCH BANNER ===== */
+    .glitch-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .glitch-wrapper img {
+      width: 100%;
+      display: block;
+    }
+
+    .glitch-wrapper::before,
+    .glitch-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("gallery/CBROFF-banner.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .glitch-wrapper::before {
+      animation: glitch1 2.5s infinite;
+      mix-blend-mode: screen;
+    }
+
+    .glitch-wrapper::after {
+      animation: glitch2 3s infinite;
+      mix-blend-mode: lighten;
+    }
+
+    @keyframes glitch1 {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-3px, -2px); }
+      60% { transform: translate(2px, 1px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitch2 {
+      0% { transform: translate(0); }
+      25% { transform: translate(2px, -1px); }
+      50% { transform: translate(-2px, 2px); }
+      100% { transform: translate(0); }
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 3rem;
       letter-spacing: 2px;
     }
 
     .tagline {
       margin-top: 10px;
       font-size: 1.2rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    .buy-button {
+    .description {
+      margin-top: 25px;
+      max-width: 700px;
+      margin-inline: auto;
+      opacity: 0.75;
+      line-height: 1.6;
+    }
+
+    .button {
       display: inline-block;
-      margin: 40px auto;
-      padding: 20px 40px;
-      font-size: 1.5rem;
+      margin: 20px 10px;
+      padding: 18px 42px;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #fff;
       background: #e10600;
-      border-radius: 12px;
+      border-radius: 14px;
       text-decoration: none;
-      box-shadow: 0 0 25px rgba(225, 6, 0, 0.7);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 0 30px rgba(225,6,0,0.7);
     }
 
-    .buy-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 45px rgba(225, 6, 0, 1);
+    .button.secondary {
+      background: #111;
+      box-shadow: 0 0 20px rgba(255,255,255,0.15);
     }
 
     .footer {
@@ -38,13 +125,40 @@
   <div class="container">
 
     <!-- Banner -->
-    <img 
-      src="CBROFF-banner.png" 
-      alt="Cerebroff Banner" 
-      class="banner"
-    />
+    <div class="glitch-wrapper">
+      <img src="gallery/CBROFF-banner.png" alt="Cerebroff Banner">
+    </div>
 
-  </footer>
+    <h1>CEREBROFF</h1>
+    <div class="tagline">Brain off. Slippage maxed.</div>
 
+    <div class="description">
+      Zero-thought impulse memecoin.<br>
+      No roadmap. No utility. No intention.<br><br>
+      If you’re here, your brain is already off.
+    </div>
+
+    <!-- Buttons -->
+    <a
+      href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS"
+      target="_blank"
+      class="button"
+    >
+      BUY $CBROFF
+    </a>
+
+    <a
+      href="https://pump.fun/coin/YOUR_TOKEN_ADDRESS"
+      target="_blank"
+      class="button secondary"
+    >
+      VIEW LIVE CHART
+    </a>
+
+    <div class="footer">
+      $CBROFF · Solana · Degen Only
+    </div>
+
+  </div>
 </body>
 </html>
